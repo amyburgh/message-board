@@ -1,0 +1,16 @@
+{
+  "name": "mini-message-board",
+  "version": "1.0.0",
+  "description": "A simple message board using ExpressJS",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js"
+  },
+  "author": "Aaron Myburgh",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  }
+}

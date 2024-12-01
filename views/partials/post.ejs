@@ -1,0 +1,13 @@
+<li class="post">
+  <div class="postName"><strong>
+    <div class="postMessage">
+      <%= message.user %></strong></div>
+      <%= message.text %>
+    </div>
+    <div class="postDate">
+      <% const date = message.date.toLocaleDateString([], { year: "2-digit", month:
+      "numeric", day: "numeric", }); const time =
+      message.date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) %>
+      <%= time %> • <%= date %>
+    </div>
+</li>
