@@ -15,6 +15,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', indexRouter);
 app.use('/new', newRouter);
 
+// 404 error handling
+app.use((req, res, next) => {
+  res.status(404).send('404: Page Not Found');
+});
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);

@@ -5,7 +5,6 @@ body {
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
-  /* display: flex; */
 }
 
 main {
@@ -25,6 +24,8 @@ header {
   background-color: white;
   padding: 0 48px 0 32px;
   display: flex;
+  padding-top: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .message-count {
@@ -56,10 +57,10 @@ ul {
 
 .post {
   padding: 16px 32px 16px 32px;
+  min-width: 420px;
   max-width: 520px;
   display: flex;
   gap: 16px;
-  margin-top: 1rem;
 }
 
 .post-icon {
@@ -73,6 +74,10 @@ ul {
   justify-content: center;
   align-items: center;
   margin-top: 12px;
+}
+
+.post-content {
+  flex-grow: 1;
 }
 
 .post-header {
@@ -111,10 +116,14 @@ ul {
   margin: 0 32px 0 32px;
 }
 
-button {
-  background-color: #007fff;
-  border: none;
-  color: white;
+.line-content {
+  white-space: nowrap;
+}
+
+.btn {
+  background-color: #dde9f5;
+  border: #8bb3da solid 1px;
+  color: #5e81a4;
   padding: 15px;
   border-radius: 50%;
   text-align: center;
@@ -129,9 +138,16 @@ button {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
+.btn:hover {
   background-color: #005bb5;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 12px 16px rgba(0, 0, 0, 0.1);
+}
+
+#sendBtn {
+  position: relative;
+  margin-top: 2rem;
+  width: min-content;
+  content: center;
 }
 
 section {
@@ -139,7 +155,133 @@ section {
   flex-direction: column;
   justify-content: space-between;
   align-items: space-between;
-  /* min-height: 100%; */
   flex-grow: 1;
   padding-bottom: 100px;
+}
+
+/* New message */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  background-color: #f4f4f4;
+  border: solid 1px #c2c0c0;
+  width: 768px;
+  border-radius: 16px 16px 0 0;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+  margin: auto;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  padding-top: 2rem;
+  background-color: #f4f4f4;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  padding: 12px;
+  border: 1px solid #c2c0c0;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #ffffff;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #007fff;
+  box-shadow: 0 0 5px rgba(0, 127, 255, 0.5);
+}
+
+form button {
+  background-color: #007fff;
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+  background-color: #005bb5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content .line-break {
+  margin: 2rem 2rem 0 2rem;
 }

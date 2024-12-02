@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini Message Board</title>
+    <title>Message Board</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/js/message.js" type="text/javascript" defer></script>
   </head>
   <body>
     <main>
@@ -19,6 +20,6 @@
         <%- include('partials/break', {text: 'Today'}) %>
       </section>
     </main>
-    <%- include('partials/button') %>
+    <%- include('partials/button') %> <%- include('partials/message') %>
   </body>
 </html>

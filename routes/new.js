@@ -3,7 +3,7 @@ import { Router } from 'express';
 const router = Router();
 
 router.get('/', (req, res) => {
-  res.render('form');
+  res.render('new');
 });
 
 export default router;

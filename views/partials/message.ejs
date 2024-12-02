@@ -1,0 +1,25 @@
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <%- include('break', {text: 'New Message'}) %>
+    <div class="modal-body">
+      <form action="/new" method="POST">
+        <input type="text" name="user" placeholder="Author" required />
+        <textarea name="text" placeholder="Type a message" required></textarea>
+        <button type="submit" id="sendBtn" class="btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="48px"
+            viewBox="0 -960 960 960"
+            width="48px"
+            fill="#5e81a4"
+          >
+            <path
+              d="M120-160v-640l760 320-760 320Zm60-93 544-227-544-230v168l242 62-242 60v167Zm0 0v-457 457Z"
+            />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
