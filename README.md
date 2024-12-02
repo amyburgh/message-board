@@ -14,12 +14,11 @@ This is a simple message board application built with Express.js. Users can view
    git clone https://github.com/yourusername/mini-message-board.git
    ```
 
-````
-
 2. Navigate to the project directory:
+
    ```bash
    cd message-board
-````
+   ```
 
 3. Install the dependencies:
    ```bash
@@ -42,3 +41,7 @@ This is a simple message board application built with Express.js. Users can view
 ## License
 
 This project is licensed under the MIT License.
+
+```
+
+```
