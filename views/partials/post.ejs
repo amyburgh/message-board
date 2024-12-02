@@ -1,13 +1,15 @@
 <li class="post">
-  <div class="postName"><strong>
-    <div class="postMessage">
-      <%= message.user %></strong></div>
-      <%= message.text %>
+  <div class="post-icon"><%= message.user.charAt(0) %></div>
+  <div class="post-content">
+    <div class="post-header">
+      <div class="post-name"><strong> <%= message.user %></strong></div>
+      <div class="post-date">
+        <% const date = message.date.toLocaleDateString([], { year: "2-digit",
+        month: "numeric", day: "numeric", }); const time =
+        message.date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit"
+        }) %> <%= time %> • <%= date %>
+      </div>
     </div>
-    <div class="postDate">
-      <% const date = message.date.toLocaleDateString([], { year: "2-digit", month:
-      "numeric", day: "numeric", }); const time =
-      message.date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) %>
-      <%= time %> • <%= date %>
-    </div>
+    <div class="post-message"><%= message.text %></div>
+  </div>
 </li>

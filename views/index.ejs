@@ -5,27 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Message Board</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        margin: 0;
-      }
-      main {
-        flex: 1;
-      }
-    </style>
   </head>
   <body>
-    <%- include('partials/header', { title : 'Home' }) %>
     <main>
-      <%- include('form') %>
-      <ul>
-        <% messages.forEach(message => { %> <%- include('partials/post', {
-        message }) %> <% }) %>
-      </ul>
+      <%- include('partials/header', { title : 'Home', messages }) %>
+      <section>
+        <%- include('partials/break', {text: 'Messages'}) %>
+        <ul>
+          <% messages.forEach(message => { %> <%- include('partials/post', {
+          message }) %> <% }) %>
+        </ul>
+
+        <%- include('partials/break', {text: 'Today'}) %>
+      </section>
     </main>
-    <%- include('partials/footer') %>
+    <%- include('partials/button') %>
   </body>
 </html>
