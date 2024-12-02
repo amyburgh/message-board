@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-  res.render('new', { messages: messages });
+  res.render('index', { messages: messages });
 });
 
 router.post('/new', (req, res) => {

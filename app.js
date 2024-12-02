@@ -1,8 +1,6 @@
 import express from 'express';
 import path from 'path';
 import indexRouter from './routes/index.js';
-import newRouter from './routes/new.js';
-// import { messages } from './db.js';
 
 const app = express();
 const __dirname = path.resolve();
@@ -13,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/', indexRouter);
-app.use('/new', newRouter);
+// app.use('/new', newRouter);
 
 // 404 error handling
 app.use((req, res, next) => {
